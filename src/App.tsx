@@ -11,9 +11,9 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/servicios" element={<Services />} />
-            <Route path="/contacto" element={<Contact />} />
+            <Route index element={<Home />} />
+            <Route path="servicios" element={<Services />} />
+            <Route path="contacto" element={<Contact />} />
           </Route>
         </Routes>
       </BrowserRouter>
