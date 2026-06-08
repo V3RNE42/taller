@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Tu Taller Mecánico en Triana",
+    "subtitle": "Servicio Rápido y Eficiente",
+    "description": "En Alcantarauto nos especializamos en mantener tu vehículo en perfecto estado. Diagnóstico profesional, reparación de calidad y el mejor servicio en Sevilla.",
+    "cta": "Contacta con nosotros",
+    "ctaSecondary": "Ver servicios"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Ofrecemos un servicio completo de mecánica para todo tipo de vehículos",
+    "items": [
+      { "id": "mecanica", "title": "Mecánica General", "description": "Reparación y mantenimiento de todos los sistemas mecánicos de tu vehículo.", "icon": "Wrench" },
+      { "id": "revisiones", "title": "Revisiones", "description": "Revisiones periódicas completas para mantener tu coche a punto.", "icon": "ClipboardCheck" },
+      { "id": "aceite-frenos", "title": "Revisión de Aceite y Frenos", "description": "Cambio de aceite, filtros y revisión completa del sistema de frenos.", "icon": "Droplets" },
+      { "id": "averias", "title": "Servicio de Averías", "description": "Diagnóstico y reparación rápida de averías mecánicas y eléctricas.", "icon": "AlertTriangle" },
+      { "id": "llantas", "title": "Cambio de Llantas", "description": "Montaje, equilibrado y cambio de neumáticos de todas las medidas.", "icon": "CircleDot" },
+      { "id": "bateria", "title": "Cambio de Batería", "description": "Sustitución de baterías y comprobación del sistema eléctrico.", "icon": "Battery" },
+      { "id": "diagnostico", "title": "Diagnóstico de Problemas", "description": "Diagnóstico electrónico avanzado para identificar averías con precisión.", "icon": "Search" },
+      { "id": "mantenimiento", "title": "Mantenimiento Preventivo", "description": "Planes de mantenimiento para alargar la vida útil de tu vehículo.", "icon": "Shield" },
+      { "id": "electrico", "title": "Reparación Eléctrica/Electrónica", "description": "Reparación de sistemas eléctricos y electrónicos del automóvil.", "icon": "Zap" },
+      { "id": "diagnostico-mecanico", "title": "Reparación Sistemas Mecánicos", "description": "Reparación especializada de motor, transmisión y suspensión.", "icon": "Settings" }
+    ]
+  },
+  "whyUs": {
+    "title": "¿Por qué elegir Alcantarauto?",
+    "items": [
+      { "id": "experiencia", "title": "Profesionalidad", "description": "Equipo altamente capacitado con años de experiencia en el sector.", "icon": "Award" },
+      { "id": "rapidez", "title": "Servicio Rápido", "description": "Diagnóstico exprés y reparaciones ágiles para que no pierdas tiempo.", "icon": "Clock" },
+      { "id": "calidad", "title": "Calidad Garantizada", "description": "Trabajamos con repuestos de calidad y ofrecemos garantía en todas las reparaciones.", "icon": "ThumbsUp" },
+      { "id": "cercania", "title": "En Triana", "description": "Taller de barrio, cerca de ti. Atención personalizada y de confianza.", "icon": "MapPin" }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos en Triana, Sevilla. Pásate o llámanos.",
+    "formTitle": "Envíanos un mensaje",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formPhone": "Teléfono",
+    "formMessage": "Mensaje",
+    "formSubmit": "Enviar mensaje",
+    "formSuccess": "¡Mensaje enviado con éxito! Te responderemos pronto.",
+    "formError": "Error al enviar el mensaje. Inténtalo de nuevo.",
+    "infoTitle": "Información de Contacto",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Email",
+    "schedule": "Horario"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "tagline": "Tu taller de confianza en Triana"
+  },
+  "cta": {
+    "title": "¿Necesitas revisar tu coche?",
+    "description": "Contáctanos hoy y te daremos presupuesto sin compromiso.",
+    "button": "Llama al 634 54 77 85"
+  }
+}
