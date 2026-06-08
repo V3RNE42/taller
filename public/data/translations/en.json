@@ -9,7 +9,7 @@
     "title": "Your Auto Shop in Triana",
     "subtitle": "Fast and Efficient Service",
     "description": "At Alcantarauto we specialize in keeping your vehicle in perfect condition. Professional diagnostics, quality repairs, and the best service in Seville.",
-    "cta": "Contact us",
+    "ctaText": "Contact us",
     "ctaSecondary": "View services"
   },
   "services": {
@@ -25,7 +25,9 @@
       { "id": "diagnostico", "title": "Problem Diagnosis", "description": "Advanced electronic diagnosis to identify faults with precision.", "icon": "Search" },
       { "id": "mantenimiento", "title": "Preventive Maintenance", "description": "Maintenance plans to extend your vehicle's lifespan.", "icon": "Shield" },
       { "id": "electrico", "title": "Electrical/Electronic Repair", "description": "Repair of automotive electrical and electronic systems.", "icon": "Zap" },
-      { "id": "diagnostico-mecanico", "title": "Mechanical Systems Repair", "description": "Specialized repair of engine, transmission, and suspension.", "icon": "Settings" }
+      { "id": "diagnostico-mecanico", "title": "Mechanical Systems Repair", "description": "Specialized repair of engine, transmission, and suspension.", "icon": "Settings" },
+      { "id": "pre-itv", "title": "Pre-MOT Check", "description": "Pre-inspection review to ensure your vehicle passes the official technical inspection without issues.", "icon": "ClipboardList" },
+      { "id": "escape", "title": "Exhaust & Catalytic Converter", "description": "Maintenance, repair and replacement of exhaust pipes, catalytic converters and particulate filters (DPF).", "icon": "Wind" }
     ]
   },
   "whyUs": {
@@ -52,15 +54,25 @@
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
+    "emailCopy": "Copy email",
+    "emailCopied": "Email copied to clipboard!",
     "schedule": "Hours"
+  },
+  "hours": {
+    "weekdaysLabel": "Monday – Thursday",
+    "fridayLabel": "Friday",
+    "weekendLabel": "Saturday & Sunday",
+    "closed": "Closed"
   },
   "footer": {
     "rights": "All rights reserved.",
-    "tagline": "Your trusted shop in Triana"
+    "tagline": "Your trusted shop in Triana",
+    "hours": "Hours",
+    "contact": "Contact"
   },
   "cta": {
     "title": "Need your car checked?",
     "description": "Contact us today for a free quote.",
-    "button": "Call 634 54 77 85"
+    "buttonText": "Call 634 54 77 85"
   }
 }

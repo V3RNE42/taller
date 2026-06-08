@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from './context/LanguageContext';
 import { siteConfig } from './config/site.config';
 import { navigationConfig } from './config/navigation';
+import WhatsAppButton from './components/WhatsAppButton';
 import {
   Wrench,
   Globe,
@@ -15,9 +16,17 @@ import {
 } from 'lucide-react';
 
 export default function Layout() {
-  const { t, lang, setLang } = useLanguage();
+  const { t, lang, setLang, loading } = useLanguage();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      </div>
+    );
+  }
 
   const toggleLang = () => setLang(lang === 'es' ? 'en' : 'es');
 
@@ -139,16 +148,16 @@ export default function Layout() {
               </h3>
               <ul className="space-y-1 text-sm text-gray-300">
                 <li>
-                  <span className="text-gray-400">{siteConfig.business.hours.weekdays.label}:</span>{' '}
+                  <span className="text-gray-400">{t('hours.weekdaysLabel')}:</span>{' '}
                   {siteConfig.business.hours.weekdays.time}
                 </li>
                 <li>
-                  <span className="text-gray-400">{siteConfig.business.hours.friday.label}:</span>{' '}
+                  <span className="text-gray-400">{t('hours.fridayLabel')}:</span>{' '}
                   {siteConfig.business.hours.friday.time}
                 </li>
                 <li>
-                  <span className="text-gray-400">{siteConfig.business.hours.weekend.label}:</span>{' '}
-                  {siteConfig.business.hours.weekend.time}
+                  <span className="text-gray-400">{t('hours.weekendLabel')}:</span>{' '}
+                  {t('hours.closed')}
                 </li>
               </ul>
             </div>
@@ -196,6 +205,7 @@ export default function Layout() {
           </div>
         </div>
       </footer>
+      <WhatsAppButton />
     </div>
   );
 }

@@ -9,7 +9,7 @@
     "title": "Tu Taller Mecánico en Triana",
     "subtitle": "Servicio Rápido y Eficiente",
     "description": "En Alcantarauto nos especializamos en mantener tu vehículo en perfecto estado. Diagnóstico profesional, reparación de calidad y el mejor servicio en Sevilla.",
-    "cta": "Contacta con nosotros",
+    "ctaText": "Contacta con nosotros",
     "ctaSecondary": "Ver servicios"
   },
   "services": {
@@ -25,7 +25,9 @@
       { "id": "diagnostico", "title": "Diagnóstico de Problemas", "description": "Diagnóstico electrónico avanzado para identificar averías con precisión.", "icon": "Search" },
       { "id": "mantenimiento", "title": "Mantenimiento Preventivo", "description": "Planes de mantenimiento para alargar la vida útil de tu vehículo.", "icon": "Shield" },
       { "id": "electrico", "title": "Reparación Eléctrica/Electrónica", "description": "Reparación de sistemas eléctricos y electrónicos del automóvil.", "icon": "Zap" },
-      { "id": "diagnostico-mecanico", "title": "Reparación Sistemas Mecánicos", "description": "Reparación especializada de motor, transmisión y suspensión.", "icon": "Settings" }
+      { "id": "diagnostico-mecanico", "title": "Reparación Sistemas Mecánicos", "description": "Reparación especializada de motor, transmisión y suspensión.", "icon": "Settings" },
+      { "id": "pre-itv", "title": "Pre-ITV", "description": "Revisión previa a la ITV para garantizar que tu vehículo supera la inspección técnica sin problemas.", "icon": "ClipboardList" },
+      { "id": "escape", "title": "Escape y Catalizador", "description": "Mantenimiento, reparación y sustitución de tubos de escape, catalizadores y filtros de partículas (DPF/FAP).", "icon": "Wind" }
     ]
   },
   "whyUs": {
@@ -52,15 +54,25 @@
     "address": "Dirección",
     "phone": "Teléfono",
     "email": "Email",
+    "emailCopy": "Copiar email",
+    "emailCopied": "¡Email copiado al portapapeles!",
     "schedule": "Horario"
+  },
+  "hours": {
+    "weekdaysLabel": "Lunes a Jueves",
+    "fridayLabel": "Viernes",
+    "weekendLabel": "Sábado y Domingo",
+    "closed": "Cerrado"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",
-    "tagline": "Tu taller de confianza en Triana"
+    "tagline": "Tu taller de confianza en Triana",
+    "hours": "Horario",
+    "contact": "Contacto"
   },
   "cta": {
     "title": "¿Necesitas revisar tu coche?",
     "description": "Contáctanos hoy y te daremos presupuesto sin compromiso.",
-    "button": "Llama al 634 54 77 85"
+    "buttonText": "Llama al 634 54 77 85"
   }
 }

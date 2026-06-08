@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { siteConfig } from '../config/site.config';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle, Copy, Check } from 'lucide-react';
 import CTASection from '../components/CTASection';
 
 export default function Contact() {
@@ -16,6 +16,18 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(siteConfig.business.contact.email).then(() => {
+      setEmailCopied(true);
+      setToast({ type: 'success', message: t('contact.emailCopied') });
+      setTimeout(() => {
+        setEmailCopied(false);
+        setToast(null);
+      }, 3000);
+    });
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -27,12 +39,29 @@ export default function Contact() {
     setLoading(true);
     setToast(null);
 
+    // Email validation
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(formData.email)) {
+      setToast({ type: 'error', message: 'Introduce un email válido.' });
+      setLoading(false);
+      return;
+    }
+    // Spanish phone validation (optional field)
+    if (formData.phone) {
+      const phoneRe = /^(?:(?:\+|00)34[-\s]?)?[6789]\d{8}$/;
+      if (!phoneRe.test(formData.phone.replace(/\s/g, ''))) {
+        setToast({ type: 'error', message: 'Introduce un teléfono español válido.' });
+        setLoading(false);
+        return;
+      }
+    }
+
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_KEY',
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY ?? '',
           subject: `Nuevo contacto desde web: ${formData.name}`,
           name: formData.name,
           email: formData.email,
@@ -129,12 +158,18 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold">{t('contact.email')}</p>
-                    <a
-                      href={`mailto:${siteConfig.business.contact.email}`}
-                      className="text-text-light text-sm transition-colors hover:text-primary"
+                    <button
+                      onClick={copyEmail}
+                      title={t('contact.emailCopy')}
+                      className="group flex items-center gap-1.5 text-text-light text-sm transition-colors hover:text-primary"
                     >
                       {siteConfig.business.contact.email}
-                    </a>
+                      {emailCopied ? (
+                        <Check className="h-3.5 w-3.5 text-green-500" />
+                      ) : (
+                        <Copy className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
+                      )}
+                    </button>
                   </div>
                 </div>
 
@@ -147,16 +182,16 @@ export default function Contact() {
                     <p className="mb-2 font-semibold">{t('contact.schedule')}</p>
                     <div className="space-y-1 text-sm">
                       <p>
-                        <span className="font-medium">{siteConfig.business.hours.weekdays.label}:</span>{' '}
+                        <span className="font-medium">{t('hours.weekdaysLabel')}:</span>{' '}
                         {siteConfig.business.hours.weekdays.time}
                       </p>
                       <p>
-                        <span className="font-medium">{siteConfig.business.hours.friday.label}:</span>{' '}
+                        <span className="font-medium">{t('hours.fridayLabel')}:</span>{' '}
                         {siteConfig.business.hours.friday.time}
                       </p>
                       <p className="text-gray-400">
-                        <span className="font-medium">{siteConfig.business.hours.weekend.label}:</span>{' '}
-                        {siteConfig.business.hours.weekend.time}
+                        <span className="font-medium">{t('hours.weekendLabel')}:</span>{' '}
+                        {t('hours.closed')}
                       </p>
                     </div>
                   </div>
