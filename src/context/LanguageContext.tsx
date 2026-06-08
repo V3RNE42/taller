@@ -5,7 +5,7 @@ type Translations = Record<string, any>;
 interface LanguageContextType {
   lang: string;
   setLang: (lang: string) => void;
-  t: (key: string) => string;
+  t: (key: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -33,7 +33,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  function t(key: string): string {
+  function t(key: string): any {
     const keys = key.split('.');
     let value: any = translations;
     for (const k of keys) {
@@ -43,7 +43,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         return key;
       }
     }
-    return typeof value === 'string' ? value : key;
+    return value;
   }
 
   return (

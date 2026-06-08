@@ -10,10 +10,10 @@ const whyUsIcons = [Award, Clock, ThumbsUp, MapPin] as const;
 export default function Home() {
   const { t } = useLanguage();
 
-  const services: any[] = t('services.items') as any;
+  const services: any[] = t('services.items');
   const featuredServices = services.slice(0, 3);
 
-  const whyUsList: any[] = t('whyUs.items') as any;
+  const whyUsList: any[] = t('whyUs.items');
 
   return (
     <div>
